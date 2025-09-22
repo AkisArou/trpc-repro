@@ -1,0 +1,12 @@
+{
+  "name": "@packages/trpc-client",
+  "type": "module",
+  "dependencies": {
+    "@trpc/client": "catalog:",
+    "@packages/trpc-server": "workspace:*",
+    "@trpc/tanstack-react-query": "catalog:"
+  },
+  "exports": {
+    "./*.ts": "./src/*.ts"
+  }
+}

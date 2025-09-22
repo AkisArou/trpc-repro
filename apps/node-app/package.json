@@ -1,0 +1,17 @@
+{
+  "name": "node-app",
+  "type": "module",
+  "scripts": {
+    "dev": "node --experimental-strip-types ./src/index.ts"
+  },
+  "dependencies": {
+    "cors": "*",
+    "@packages/trpc-server": "workspace:*",
+    "@trpc/server": "catalog:"
+  },
+  "devDependencies": {
+    "@types/cors": "*",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}

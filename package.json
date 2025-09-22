@@ -1,0 +1,13 @@
+{
+  "name": "trpc-repro",
+  "type": "module",
+  "scripts": {
+    "dev:node": "pnpm --filter=node-app dev",
+    "dev:expo": "pnpm --filter=expo-app start",
+    "dev:vite": "pnpm --filter=vite-app dev"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@10.17.0"
+}

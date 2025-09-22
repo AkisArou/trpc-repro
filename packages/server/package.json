@@ -1,0 +1,14 @@
+{
+  "name": "@packages/trpc-server",
+  "type": "module",
+  "dependencies": {
+    "@trpc/server": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "@types/node": "catalog:"
+  },
+  "exports": {
+    "./*.ts": "./src/*.ts"
+  }
+}

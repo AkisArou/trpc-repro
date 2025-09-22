@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./packages/server/" },
+    { "path": "./packages/client/" },
+    { "path": "./apps/expo-app" },
+    { "path": "./apps/node-app" },
+    { "path": "./apps/vite-project" }
+  ]
+}
