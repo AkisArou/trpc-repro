@@ -10,14 +10,14 @@ catalogs:
       specifier: 5.90.1
       version: 5.90.1
     '@trpc/client':
-      specifier: 11.5.0
-      version: 11.5.0
+      specifier: 11.5.2-canary.11+aac35fbdc
+      version: 11.5.2-canary.11
     '@trpc/server':
-      specifier: 11.5.0
-      version: 11.5.0
+      specifier: 11.5.2-canary.11+aac35fbdc
+      version: 11.5.2-canary.11
     '@trpc/tanstack-react-query':
-      specifier: 11.5.0
-      version: 11.5.0
+      specifier: 11.5.2-canary.11+aac35fbdc
+      version: 11.5.2-canary.11
     '@types/node':
       specifier: 22.15.34
       version: 22.15.34
@@ -128,7 +128,7 @@ importers:
         version: link:../../packages/server
       '@trpc/server':
         specifier: 'catalog:'
-        version: 11.5.0(typescript@5.9.2)
+        version: 11.5.2-canary.11(typescript@5.9.2)
       cors:
         specifier: '*'
         version: 2.8.5
@@ -184,16 +184,16 @@ importers:
         version: link:../server
       '@trpc/client':
         specifier: 'catalog:'
-        version: 11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)
+        version: 11.5.2-canary.11(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(typescript@5.9.2)
       '@trpc/tanstack-react-query':
         specifier: 'catalog:'
-        version: 11.5.0(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
+        version: 11.5.2-canary.11(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-canary.11(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
 
   packages/server:
     dependencies:
       '@trpc/server':
         specifier: 'catalog:'
-        version: 11.5.0(typescript@5.9.2)
+        version: 11.5.2-canary.11(typescript@5.9.2)
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -1534,23 +1534,23 @@ packages:
     peerDependencies:
       react: 19.1.0
 
-  '@trpc/client@11.5.0':
-    resolution: {integrity: sha512-32oH+KOAdo73jJKjU9tyG+vCjID6A28NgXwUNr691O5HjpF5yyTX51Zzyee8YtGzU89Nw/drCHdfA4gD7BN2eg==}
+  '@trpc/client@11.5.2-canary.11':
+    resolution: {integrity: sha512-eEZYsqKj0hfQuXRP/k3R86zgBRL4hqYZ7SRvE6kVYZMDqQKcNLsdItDxWzhSlwdwjwvpvtnks4jY889sY58nEA==}
     peerDependencies:
-      '@trpc/server': 11.5.0
+      '@trpc/server': 11.5.2-canary.11+aac35fbdc
       typescript: '>=5.7.2'
 
-  '@trpc/server@11.5.0':
-    resolution: {integrity: sha512-0IBtkmUCeO2ycn4K45/cqsujnlCQrSvkCo7lFDpg3kGMIPiLyLRciID5IiS7prEjRjeITa+od2aaHTIwONApVw==}
+  '@trpc/server@11.5.2-canary.11':
+    resolution: {integrity: sha512-pTizyjSQteR53kTsW2AYmYqjHweQtRn5fQFFgrveefezzPK4Cl+hgcUBivJTTTwWRz4IOjBbAuGohhsDc3PPzg==}
     peerDependencies:
       typescript: '>=5.7.2'
 
-  '@trpc/tanstack-react-query@11.5.0':
-    resolution: {integrity: sha512-I4A/fxLXbbfGIfV0X0tKtcy8WqLN7t/P6mvwU33ZkeLEYRk0PyBl/zCTc8z189m5MufgRqEWJ1ps6E7sb0u1JQ==}
+  '@trpc/tanstack-react-query@11.5.2-canary.11':
+    resolution: {integrity: sha512-WpQIdcB6N79I3+zfXDpj6rxOSdL73ExuJ4XJS0XpSn2DuIVFoedwQ/sP6Mfio8xHhuo/eWOz7UWN0HDcqMBGLw==}
     peerDependencies:
       '@tanstack/react-query': ^5.80.3
-      '@trpc/client': 11.5.0
-      '@trpc/server': 11.5.0
+      '@trpc/client': 11.5.2-canary.11+aac35fbdc
+      '@trpc/server': 11.5.2-canary.11+aac35fbdc
       react: 19.1.0
       react-dom: '>=18.2.0'
       typescript: '>=5.7.2'
@@ -5363,20 +5363,20 @@ snapshots:
       '@tanstack/query-core': 5.90.1
       react: 19.1.0
 
-  '@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)':
+  '@trpc/client@11.5.2-canary.11(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(typescript@5.9.2)':
     dependencies:
-      '@trpc/server': 11.5.0(typescript@5.9.2)
+      '@trpc/server': 11.5.2-canary.11(typescript@5.9.2)
       typescript: 5.9.2
 
-  '@trpc/server@11.5.0(typescript@5.9.2)':
+  '@trpc/server@11.5.2-canary.11(typescript@5.9.2)':
     dependencies:
       typescript: 5.9.2
 
-  '@trpc/tanstack-react-query@11.5.0(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.0(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
+  '@trpc/tanstack-react-query@11.5.2-canary.11(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-canary.11(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
     dependencies:
       '@tanstack/react-query': 5.90.1(react@19.1.0)
-      '@trpc/client': 11.5.0(@trpc/server@11.5.0(typescript@5.9.2))(typescript@5.9.2)
-      '@trpc/server': 11.5.0(typescript@5.9.2)
+      '@trpc/client': 11.5.2-canary.11(@trpc/server@11.5.2-canary.11(typescript@5.9.2))(typescript@5.9.2)
+      '@trpc/server': 11.5.2-canary.11(typescript@5.9.2)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       typescript: 5.9.2

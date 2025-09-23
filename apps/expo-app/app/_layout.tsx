@@ -8,6 +8,8 @@ import {
   QueryClient,
   QueryClientProvider,
   useQuery,
+  experimental_streamedQuery as streamedQuery,
+  queryOptions,
 } from "@tanstack/react-query";
 import { useState } from "react";
 import { Text, View } from "react-native";
@@ -47,14 +49,60 @@ export default function RootLayout() {
 }
 
 function Inner() {
+  // TRPC
   const trpc = useTRPC();
   const query = useQuery(trpc.greeting.queryOptions());
-
   const count = query.data?.at(-1) ?? 0;
+
+  // FETCH
+  const fetchQuery = useQuery(
+    queryOptions({
+      queryKey: ["count"],
+      queryFn: streamedQuery({
+        streamFn: fetchStream,
+      }),
+      staleTime: Infinity,
+    }),
+  );
+  const countFetch = fetchQuery.data?.at(-1) ?? 0;
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Count {count}</Text>
+      <Text>Count from tRPC {count}</Text>
+      <Text>Count from fetch {countFetch}</Text>
     </View>
   );
 }
+
+async function* fetchStream() {
+  const response = await fetch(
+    `${process.env.EXPO_PUBLIC_TRPC_URL}/count`.replace("3000", "3001"),
+  );
+
+  if (!response.body) {
+    console.error("No response body");
+    return;
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder("utf-8");
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) {
+        console.log("[vanilla fetch] Stream finished");
+        break;
+      }
+      const chunk = decoder.decode(value, { stream: true });
+      console.log("[vanilla fetch] Received chunk:", chunk.trim());
+      yield chunk.trim();
+    }
+  } catch (err) {
+    console.error("[vanilla fetch] Stream error:", err);
+  } finally {
+    reader.releaseLock();
+  }
+}
+
+fetchStream();
