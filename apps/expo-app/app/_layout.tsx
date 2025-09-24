@@ -12,7 +12,7 @@ import {
   queryOptions,
 } from "@tanstack/react-query";
 import { useState } from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 export default function RootLayout() {
   const [queryClient] = useState(() => new QueryClient());
@@ -54,22 +54,29 @@ function Inner() {
   const query = useQuery(trpc.greeting.queryOptions());
   const count = query.data?.at(-1) ?? 0;
 
-  // FETCH
-  const fetchQuery = useQuery(
-    queryOptions({
-      queryKey: ["count"],
-      queryFn: streamedQuery({
-        streamFn: fetchStream,
-      }),
-      staleTime: Infinity,
-    }),
-  );
-  const countFetch = fetchQuery.data?.at(-1) ?? 0;
+  // // FETCH
+  // const fetchQuery = useQuery(
+  //   queryOptions({
+  //     queryKey: ["count"],
+  //     queryFn: streamedQuery({
+  //       streamFn: fetchStream,
+  //     }),
+  //     staleTime: Infinity,
+  //   }),
+  // );
+  // const countFetch = fetchQuery.data?.at(-1) ?? 0;
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Count from tRPC {count}</Text>
-      <Text>Count from fetch {countFetch}</Text>
+      <Pressable
+        onPress={() => {
+          query.refetch();
+        }}
+      >
+        <Text>Refresh</Text>
+      </Pressable>
+      {/* <Text>Count from fetch {countFetch}</Text> */}
     </View>
   );
 }
