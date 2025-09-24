@@ -4,10 +4,10 @@ packages:
 
 catalog:
   typescript: 5.9.2
-  "@trpc/client": 11.5.2-canary.11+aac35fbdc
-  "@trpc/react-query": 11.5.2-canary.11+aac35fbdc
-  "@trpc/server": 11.5.2-canary.11+aac35fbdc
-  "@trpc/tanstack-react-query": 11.5.2-canary.11+aac35fbdc
+  "@trpc/client": 11.5.2-alpha-6955-again-2025-09-24-08-18-00.13
+  "@trpc/react-query": 11.5.2-alpha-6955-again-2025-09-24-08-18-00.13
+  "@trpc/server": 11.5.2-alpha-6955-again-2025-09-24-08-18-00.13
+  "@trpc/tanstack-react-query": 11.5.2-alpha-6955-again-2025-09-24-08-18-00.13
   "@tanstack/react-query": 5.90.1
   "@types/node": 22.15.34
   react: 19.1.0
