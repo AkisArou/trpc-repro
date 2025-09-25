@@ -10,14 +10,14 @@ catalogs:
       specifier: 5.90.1
       version: 5.90.1
     '@trpc/client':
-      specifier: 11.5.2-alpha-tmp-6955-again.17
-      version: 11.5.2-alpha-tmp-6955-again.17
+      specifier: 11.5.2-alpha-tmp-6955-again.19
+      version: 11.5.2-alpha-tmp-6955-again.19
     '@trpc/server':
-      specifier: 11.5.2-alpha-tmp-6955-again.17
-      version: 11.5.2-alpha-tmp-6955-again.17
+      specifier: 11.5.2-alpha-tmp-6955-again.19
+      version: 11.5.2-alpha-tmp-6955-again.19
     '@trpc/tanstack-react-query':
-      specifier: 11.5.2-alpha-tmp-6955-again.17
-      version: 11.5.2-alpha-tmp-6955-again.17
+      specifier: 11.5.2-alpha-tmp-6955-again.19
+      version: 11.5.2-alpha-tmp-6955-again.19
     '@types/node':
       specifier: 22.15.34
       version: 22.15.34
@@ -128,7 +128,7 @@ importers:
         version: link:../../packages/server
       '@trpc/server':
         specifier: 'catalog:'
-        version: 11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2)
+        version: 11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2)
       cors:
         specifier: '*'
         version: 2.8.5
@@ -184,16 +184,16 @@ importers:
         version: link:../server
       '@trpc/client':
         specifier: 'catalog:'
-        version: 11.5.2-alpha-tmp-6955-again.17(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(typescript@5.9.2)
+        version: 11.5.2-alpha-tmp-6955-again.19(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(typescript@5.9.2)
       '@trpc/tanstack-react-query':
         specifier: 'catalog:'
-        version: 11.5.2-alpha-tmp-6955-again.17(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-alpha-tmp-6955-again.17(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
+        version: 11.5.2-alpha-tmp-6955-again.19(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-alpha-tmp-6955-again.19(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)
 
   packages/server:
     dependencies:
       '@trpc/server':
         specifier: 'catalog:'
-        version: 11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2)
+        version: 11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2)
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -1534,23 +1534,23 @@ packages:
     peerDependencies:
       react: 19.1.0
 
-  '@trpc/client@11.5.2-alpha-tmp-6955-again.17':
-    resolution: {integrity: sha512-x8jUr8e966NO9b+0zmsUX6QNxfItK6F8B8ph5TttLDjDuuSor/JzHWozklmBSnPKVsSb8Rsq/FjgEmYO7IJkXQ==}
+  '@trpc/client@11.5.2-alpha-tmp-6955-again.19':
+    resolution: {integrity: sha512-UmWDCx6vZhkmzNcFI/ObjBufFQuqBH+faxDnPVL9idShiIDLG9jUOn0EqTXK1wa85ddZ2JhW+aTftRY2hYyMQQ==}
     peerDependencies:
-      '@trpc/server': 11.5.2-alpha-tmp-6955-again.17+2f5d23c16
+      '@trpc/server': 11.5.2-alpha-tmp-6955-again.19+0abfc0b1f
       typescript: '>=5.7.2'
 
-  '@trpc/server@11.5.2-alpha-tmp-6955-again.17':
-    resolution: {integrity: sha512-fPoHiA8TuFTrUMF49qPY9YITw7mfjoXGIvyHaHI4ORu+ynwRMJRaMCM66BgvOfSkCrl+C550hN94BP3YtAFeZg==}
+  '@trpc/server@11.5.2-alpha-tmp-6955-again.19':
+    resolution: {integrity: sha512-E1iOm8A/3CydNIBmXhoDe14XXU3lQO6XUkR+vXGd8I6kNG7O4xQpUqtWFZYH+OdTqxT3QOso5wvDeRcxlCqQ1Q==}
     peerDependencies:
       typescript: '>=5.7.2'
 
-  '@trpc/tanstack-react-query@11.5.2-alpha-tmp-6955-again.17':
-    resolution: {integrity: sha512-FgT8i2zHoHJi4b8Y0QFNiGL285SAD0J1pG7est4IXNqD7xLQtsYJ6pps5LuksW6BmyiY/25FVQ+qD9ODcK73aA==}
+  '@trpc/tanstack-react-query@11.5.2-alpha-tmp-6955-again.19':
+    resolution: {integrity: sha512-Xtl9dP6hhrRF8HMNiYSKwoYSbgNfmnxto7UR1pJnZlMrzvNyZJksVfBG3bdi/urpjNwKwycgnxFaBouVKCVVUg==}
     peerDependencies:
       '@tanstack/react-query': ^5.80.3
-      '@trpc/client': 11.5.2-alpha-tmp-6955-again.17+2f5d23c16
-      '@trpc/server': 11.5.2-alpha-tmp-6955-again.17+2f5d23c16
+      '@trpc/client': 11.5.2-alpha-tmp-6955-again.19+0abfc0b1f
+      '@trpc/server': 11.5.2-alpha-tmp-6955-again.19+0abfc0b1f
       react: 19.1.0
       react-dom: '>=18.2.0'
       typescript: '>=5.7.2'
@@ -5363,20 +5363,20 @@ snapshots:
       '@tanstack/query-core': 5.90.1
       react: 19.1.0
 
-  '@trpc/client@11.5.2-alpha-tmp-6955-again.17(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(typescript@5.9.2)':
+  '@trpc/client@11.5.2-alpha-tmp-6955-again.19(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(typescript@5.9.2)':
     dependencies:
-      '@trpc/server': 11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2)
+      '@trpc/server': 11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2)
       typescript: 5.9.2
 
-  '@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2)':
+  '@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2)':
     dependencies:
       typescript: 5.9.2
 
-  '@trpc/tanstack-react-query@11.5.2-alpha-tmp-6955-again.17(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-alpha-tmp-6955-again.17(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
+  '@trpc/tanstack-react-query@11.5.2-alpha-tmp-6955-again.19(@tanstack/react-query@5.90.1(react@19.1.0))(@trpc/client@11.5.2-alpha-tmp-6955-again.19(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(typescript@5.9.2))(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.2)':
     dependencies:
       '@tanstack/react-query': 5.90.1(react@19.1.0)
-      '@trpc/client': 11.5.2-alpha-tmp-6955-again.17(@trpc/server@11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2))(typescript@5.9.2)
-      '@trpc/server': 11.5.2-alpha-tmp-6955-again.17(typescript@5.9.2)
+      '@trpc/client': 11.5.2-alpha-tmp-6955-again.19(@trpc/server@11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2))(typescript@5.9.2)
+      '@trpc/server': 11.5.2-alpha-tmp-6955-again.19(typescript@5.9.2)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       typescript: 5.9.2

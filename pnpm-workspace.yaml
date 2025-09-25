@@ -4,10 +4,10 @@ packages:
 
 catalog:
   typescript: 5.9.2
-  "@trpc/client": 11.5.2-alpha-tmp-6955-again.17
-  "@trpc/react-query": 11.5.2-alpha-tmp-6955-again.17
-  "@trpc/server": 11.5.2-alpha-tmp-6955-again.17
-  "@trpc/tanstack-react-query": 11.5.2-alpha-tmp-6955-again.17
+  "@trpc/client": 11.5.2-alpha-tmp-6955-again.19
+  "@trpc/react-query": 11.5.2-alpha-tmp-6955-again.19
+  "@trpc/server": 11.5.2-alpha-tmp-6955-again.19
+  "@trpc/tanstack-react-query": 11.5.2-alpha-tmp-6955-again.19
   "@tanstack/react-query": 5.90.1
   "@types/node": 22.15.34
   react: 19.1.0
