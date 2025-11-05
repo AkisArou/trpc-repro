@@ -1,43 +1,55 @@
-# tRPC fetch stream reproduction
+# tRPC Fetch Stream Reproduction (`httpBatchStreamLink`)
 
-Apps involved:
+## Issue Overview
 
-- **Node.js** app: exposes a single streaming query that emits an incrementing counter (0 → 5) using tRPC.
-- **Expo** app: subscribes to the stream and displays the counter.
-- **Vite** web app: also subscribes to the same stream.
-
-Issue observed:
-
-**Expo** receives the streamed data correctly, but when the stream finishes an error is thrown:
+In our **Expo** app, when pressing the **Refresh** button to refetch data, there is roughly a **20% chance** that the following error occurs:
 
 ```text
-TypeError: The stream is not in a state that permits close
+[TRPCClientError: JSON Parse error: Unexpected character: i]
 ```
 
-Implementation follows the official docs: [tRPC httpBatchStreamLink (React Native)](https://trpc.io/docs/client/links/httpBatchStreamLink#react-native)
+In our app, when this happens, **all subsequent batched queries fail** with errors.
 
-**Vite** completes the stream without errors.
+Occasionally, when launching the Expo app, another error appears:
 
-## Reproduction steps
+```text
+[TRPCClientError: Unknown error]
+```
+
+In some cases, an additional error has been observed indicating that **the response is not an AsyncIterable** (or similar wording).
+
+The implementation follows the official tRPC documentation:
+👉 [tRPC `httpBatchStreamLink` (React Native)](https://trpc.io/docs/client/links/httpBatchStreamLink#react-native)
+
+---
+
+## Setup Description
+
+The project defines three tRPC procedures:
+
+1. **Streamed paginated query** — fetches a paginated list of objects.
+2. **Streamed counter query** — fetches a simple numeric count.
+3. **Regular query** — fetches a single object.
+
+---
+
+## Steps to Reproduce
 
 ```bash
-pnpm dev:node   # start the Node.js streaming server
-pnpm dev:expo   # start the Expo client
-pnpm dev:vite   # (optional) start the Vite web client
+pnpm dev:node   # Start the Node.js streaming server
+pnpm dev:expo   # Start the Expo client
 ```
 
-## Extra info
+Then:
 
-Raw stream frames captured in the **Vite** web app:
+1. Press the **Refresh** button in the app.
+2. About 1 in 5 times, a **JSON parse error** is thrown.
 
-```json
-{"0":[[0],[null,0,0]]}
-[0,0,[[{"result":0}],["result",0,1]]]
-[1,0,[[{"data":0}],["data",0,2]]]
-[2,0,[[0],[null,1,3]]]
-[3,1,[[1]]]
-[3,1,[[2]]]
-[3,1,[[3]]]
-[3,1,[[5]]]
-[3,0,[[]]]
-```
+---
+
+## Relevant Source Files
+
+- **tRPC router definition:** `packages/server/src/trpc.ts`
+- **tRPC client definition:** `packages/client/src/trpc.ts`
+- **Node.js server entry point:** `apps/node-app/src/index.ts`
+- **Expo app tRPC usage:** `apps/expo-app/app/_layout.tsx`

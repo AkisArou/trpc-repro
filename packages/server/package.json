@@ -2,7 +2,8 @@
   "name": "@packages/trpc-server",
   "type": "module",
   "dependencies": {
-    "@trpc/server": "catalog:"
+    "@trpc/server": "catalog:",
+    "@faker-js/faker": "catalog:"
   },
   "devDependencies": {
     "typescript": "catalog:",
