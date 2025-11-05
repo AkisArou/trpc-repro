@@ -9,8 +9,8 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
-import { useEffect, useRef, useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { useState } from "react";
+import { Button, Text, View } from "react-native";
 
 export default function RootLayout() {
   const [queryClient] = useState(() => new QueryClient());
@@ -50,16 +50,15 @@ function Inner() {
       <Text>Current count: {countQuery.data?.at(-1) ?? 0}</Text>
       <Text>Simple query: {simpleQuery.data?.id}</Text>
 
-      <Pressable
+      <Button
+        title="Refresh"
         onPress={() => {
           simpleQuery.refetch();
           paginatedQuery.refetch();
           simpleQuery.refetch();
           countQuery.refetch();
         }}
-      >
-        <Text>Refresh</Text>
-      </Pressable>
+      />
     </View>
   );
 }
