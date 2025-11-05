@@ -12,22 +12,12 @@ export const appRouter = router({
     return createAirport();
   }),
 
-  paginated: publicProcedure.query(async function* ({ signal }) {
-    let pagesLeft = 10;
-
-    while (pagesLeft-- && !signal?.aborted) {
-      yield faker.helpers.multiple(createAirport, { count: 300 });
-      await delay(100);
-    }
+  paginated: publicProcedure.query(async function* () {
+    yield faker.helpers.multiple(createAirport, { count: 300 });
   }),
 
   count: publicProcedure.query(async function* () {
-    let count = 1;
-
-    while (count <= 40) {
-      await delay(30);
-      yield count++;
-    }
+    yield 1;
   }),
 });
 
